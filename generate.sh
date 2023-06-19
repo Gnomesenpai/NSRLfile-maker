@@ -1,10 +1,10 @@
 cd /media/user/nsrl/ && \
-#wget http://172.25.15.117/RDS_2023.06.1_modern_minimal.zip -O  nsrl.zip && \
-#unzip nsrl.zip
+wget http://172.25.15.117/RDS_2023.06.1_modern_minimal.zip -O  nsrl.zip && \
+unzip nsrl.zip
 rm nsrl.zip
 cd *minimal
-#nsrldb="$(ls *minimal.db | sort -V | tail -n1)"
-#mv -v "$nsrldb" ../backup.db
+nsrldb="$(ls *minimal.db | sort -V | tail -n1)"
+mv -v "$nsrldb" ../backup.db
 cd ..
 #create TXT from DB file
 ls -lah
