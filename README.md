@@ -10,4 +10,4 @@ how to use:
 2. run "Docker build . -t nsrl:latest"
 3. place NSRL DB ZIP file in /home/user/nsrl - DB ZIP can be obtained from https://www.nist.gov/itl/ssd/software-quality-group/national-software-reference-library-nsrl/nsrl-download/current-rds
 4. docker run -it -v /home/user/nsrl:/nsrl nsrl:latest
-5. output will be NSRLfile-**-**-****.txt which can then be ingested into Griffeye, Cellebrite or other forensic software.
+5. output will be NSRLfile-date.txt which can then be ingested into Griffeye, Cellebrite or other forensic software.
