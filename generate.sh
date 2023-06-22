@@ -1,4 +1,4 @@
-d /nsrl && \
+cd /nsrl && \
 mv RDS*.zip nsrl.zip
 unzip nsrl.zip
 #rm nsrl.zip
@@ -27,4 +27,4 @@ sed -e "s/\r//g" NSRLFile-header.txt > NSRLFile-$(date +"%d-%m-%Y").txt
 #reclaim space
 rm output.txt
 rm NSRLFile-header.txt
-shasum NSRLFile-$(date +"%d-%m-%Y").txt
+sha1sum NSRLFile-$(date +"%d-%m-%Y").txt
