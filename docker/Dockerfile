@@ -1,3 +1,4 @@
+org.opencontainers.image.source = "https://github.com/Gnomesenpai/NSRLfile-maker"
 From debian:stable-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
