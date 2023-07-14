@@ -4,7 +4,7 @@ This is only supported for the MODERN PC MINIMAL FULL SQL DOWNLOADS
 
 This is not a fast process and needs a minimum free disk space of 250GB. The unextracted DB is over 150GB alone.
 
-for speed context, a Ubuntu VM on a single IntelXeon Silver 4310 (4 vcore) took 59minutes
+for speed context, a Ubuntu VM on a single Intel Xeon Silver 4310 (4 vcore) took 59minutes
 WSL on a dual Intel Xeon Silver 4010 (32 thread) took over 24h, this is a known issue with the way WSL handles the storage layer between the subsystem.
 
 NEW:
