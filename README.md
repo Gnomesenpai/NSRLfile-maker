@@ -16,7 +16,8 @@ NEW:
 6. place NSRL DB file into storage location
 
 
-OLD:
+OLD:	
+
 how to use:
 1. Clone repo
 2. run "Docker build . -t nsrl:latest"
