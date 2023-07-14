@@ -2,9 +2,21 @@
 Makes NSRLfile.txt from v3 DB
 This is only supported for the MODERN PC MINIMAL FULL SQL DOWNLOADS
 
-This is not a fast process and needs a minimum free disk space of 500GB. The unextracted DB is over 150GB alone.
+This is not a fast process and needs a minimum free disk space of 250GB. The unextracted DB is over 150GB alone.
+
+for speed context, a Ubuntu VM on a single IntelXeon Silver 4310 (4 vcore) took 59minutes
+WSL on a dual Intel Xeon Silver 4010 (32 thread) took over 24h, this is a known issue with the way WSL handles the storage layer between the subsystem.
+
+NEW:
+1. clone repo
+2. do "chmod 777 depends.sh run.sh"
+3. do "sudo depends.sh"
+4. do "docker build docker/. -t nsrl:latest OR docker image pull and use the premade package
+5. configure storage location in "run.sh"
+6. place NSRL DB file into storage location
 
 
+OLD:
 how to use:
 1. Clone repo
 2. run "Docker build . -t nsrl:latest"
