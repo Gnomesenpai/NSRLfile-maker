@@ -31,7 +31,7 @@ echo -e "${GREEN}sed ${YELLOW}output.txt${NOCOLOUR}"
 sed -i 's/"""/"/g' output.txt 
 #Create a header file with a single line containing the following, called NSRLFile-header.txt:
 echo -e "${GREEN}create ${YELLOW}NSRLFile-header.txt${NOCOLOUR}"
-echo "\"SHA-1\",\"MD5\",\"CRC32\",\"FileName\",\"FileSize\",\"ProductCode\",\"OpSystemCode\",\"Speci>
+echo "\"SHA-1\",\"MD5\",\"CRC32\",\"FileName\",\"FileSize\",\"ProductCode\",\"OpSystemCode\",\"SpecialCode\"" > NSRLFile-header.txt
 echo -e "${GREEN}cat ${YELLOW}output.txt ${GREEN}into ${YELLOW}NSRLFile-header.txt"
 cat output.txt >> NSRLFile-header.txt
 echo -e "${RED}Removing output.txt${NOCOLOUR}"
