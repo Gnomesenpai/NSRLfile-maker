@@ -13,7 +13,7 @@ NEW:
 3. do "sudo depends.sh"
 4. do "docker build docker/. -t nsrl:latest OR docker image pull and use the premade package
 5. configure storage location in "run.sh"
-6. place NSRL DB file into storage location
+6. place NSRL DB file into storage location. DB ZIP can be obtained from https://www.nist.gov/itl/ssd/software-quality-group/national-software-reference-library-nsrl/nsrl-download/current-rds
 
 
 OLD:	
