@@ -1,44 +1,53 @@
-name: Push Docker Image to Docker Hub
+name: Build and Push Docker Image to Docker Hub
+
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'SemVer format release tag, i.e. 0.24.5'
-        required: true
-  repository_dispatch:
-    types: [ push-docker-image ]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: docker.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
-  docker-image-push:
-    name: Push Docker Image
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build --no-cache --force-rm docker/Dockerfile
+  push_to_registry:
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out the repo
         uses: actions/checkout@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
-          platforms: linux/amd64
-      - name: Build and push dolt image
-        uses: docker/build-push-action@v3
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          platforms: linux/amd64
-          context: docker/.
-          file: ./Dockerfile
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: docker
           push: true
-          tags: gnomesenpai/nsrlfile-maker:${{ github.event.inputs.version || github.event.client_payload.version }} , gnomesenpai/nsrlfile-maker
-          build-args: |
-            DOLT_VERSION=${{ github.event.inputs.version || github.event.client_payload.version }}
-      - name: Update Docker Hub Readme for dolt image
-        uses: peter-evans/dockerhub-description@v3
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-          repository: gnomesenpai/nsrlfile-maker
-          readme-filepath: ./README.md
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
