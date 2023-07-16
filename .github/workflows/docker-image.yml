@@ -29,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64
-          context: dockerfile/.
+          context: docker/.
           file: ./Dockerfile
           push: true
           tags: gnomesenpai/nsrlfile-maker:${{ github.event.inputs.version || github.event.client_payload.version }} , gnomesenpai/nsrlfile-maker
