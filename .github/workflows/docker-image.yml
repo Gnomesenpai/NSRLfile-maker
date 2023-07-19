@@ -31,4 +31,4 @@ jobs:
           context: docker
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ github.repository }}:main
+          tags: gnomesenpai/nsrlfile-maker:main
