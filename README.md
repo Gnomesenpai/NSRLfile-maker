@@ -1,5 +1,5 @@
 # NSRLfile-maker
-[![ci](https://github.com/Gnomesenpai/NSRLfile-maker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Gnomesenpai/NSRLfile-maker/actions/workflows/docker-image.yml)
+[![ci](https://github.com/Gnomesenpai/NSRLfile-maker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Gnomesenpai/NSRLfile-maker/actions/workflows/docker-image.yml)  
 Makes NSRLfile.txt from v3 DB
 This is only supported for the MODERN PC MINIMAL FULL SQL DOWNLOADS
 
