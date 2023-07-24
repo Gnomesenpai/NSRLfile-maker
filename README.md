@@ -12,7 +12,7 @@ NEW:
 1. clone repo
 2. do "chmod 777 depends.sh run.sh"
 3. do "sudo depends.sh"
-4. do "docker build docker/. -t nsrl:latest OR docker image pull and use the premade package
+4. do "docker build docker/. -t nsrlfile-maker:v3 OR docker pull gnomesenpai/nsrlfile-maker
 5. configure storage location in "run.sh"
 6. place NSRL DB file into storage location. DB ZIP can be obtained from https://www.nist.gov/itl/ssd/software-quality-group/national-software-reference-library-nsrl/nsrl-download/current-rds
 
