@@ -15,6 +15,9 @@ NEW:
 4. do "docker build docker/. -t nsrlfile-maker:v3 OR docker pull gnomesenpai/nsrlfile-maker
 5. configure storage location in "run.sh"
 6. place NSRL DB file into storage location. DB ZIP can be obtained from https://www.nist.gov/itl/ssd/software-quality-group/national-software-reference-library-nsrl/nsrl-download/current-rds
+7. do "sudo run.sh"
+8. wait
+9. profit
 
 
 OLD:	
