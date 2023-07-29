@@ -19,5 +19,5 @@ WSL on a dual Intel Xeon Silver 4010 (32 thread) took over 24h, this is a known 
 8. wait
 9. profit
 
-Github: https://github.com/Gnomesenpai/NSRLfile-maker 
-Dockerhub: https://hub.docker.com/r/gnomesenpai/nsrlfile-maker 
+Github: https://github.com/Gnomesenpai/NSRLfile-maker  
+Dockerhub: https://hub.docker.com/r/gnomesenpai/nsrlfile-maker  
