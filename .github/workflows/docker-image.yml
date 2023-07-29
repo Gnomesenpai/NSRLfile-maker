@@ -1,9 +1,16 @@
 name: ci
 
+#on:
+#  push:
+#    branches:
+#      - "v3"
+#on: workflow_dispatch
 on:
   push:
-    branches:
-      - "v3"
+    paths:
+      - 'docker/**'
+  workflow_dispatch:
+  
 
 jobs:
   docker_push:
