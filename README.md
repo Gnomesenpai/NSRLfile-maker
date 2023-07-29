@@ -12,12 +12,12 @@ WSL on a dual Intel Xeon Silver 4010 (32 thread) took over 24h, this is a known 
 1. clone repo
 2. do "chmod 777 depends.sh run.sh"
 3. do "sudo depends.sh"
-4. do "docker build docker/. -t nsrl:latest OR docker image pull and use the premade package
+4. do "docker build docker/. -t nsrlfile-maker:v3 OR docker pull gnomesenpai/nsrlfile-maker
 5. configure storage location in "run.sh"
 6. place NSRL DB file into storage location. DB ZIP can be obtained from https://www.nist.gov/itl/ssd/software-quality-group/national-software-reference-library-nsrl/nsrl-download/current-rds
-7. sudo run.sh
-8. wait...
-9. profit!
+7. do "sudo run.sh"
+8. wait
+9. profit
 
 Github: https://github.com/Gnomesenpai/NSRLfile-maker
 Dockerhub: https://hub.docker.com/r/gnomesenpai/nsrlfile-maker
