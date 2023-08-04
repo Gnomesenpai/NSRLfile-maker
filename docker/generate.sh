@@ -40,7 +40,7 @@ echo -e "${RED}Removing output.txt${NOCOLOUR}"
 rm -v output.txt
 echo -e "${GREEN}sed ${YELLOW}NSRLFile-header.txt${NOCOLOUR}"
 echo -e "${GREEN}final file creation${NOCOLOUR}"
-sed -e "s/\r//g" NSRLFile-header.txt > NSRLFile-$(date +"%d-%m-%Y").txt
+sed -e "s/\r//g" NSRLFile-header.txt > NSRLFile-$pattern3.txt
 #reclaim space
 rm -v NSRLFile-header.txt
 rm -v backup.db
