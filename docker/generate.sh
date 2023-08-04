@@ -7,6 +7,8 @@ cd /nsrl && \
 pattern=(RDS*)
 #echo $pattern
 if [ -f ${pattern[0]} ]; then
+pattern2="echo "${pattern//./-}""
+pattern3=$(echo $pattern2 | grep -Eo '[[:digit:]]{4}.[[:digit:]]{2}.[[:digit:]]{1}')
 mv RDS*.zip nsrl.zip
 echo -e "${GREEN}Unzipping archive${NOCOLOUR}"
 unzip nsrl.zip
@@ -44,8 +46,8 @@ rm -v NSRLFile-header.txt
 rm -v backup.db
 rm -R -v RDS*
 echo -e "${GREEN}Hashing ${YELLOW}NSRLFile${NOCOLOUR}"
-sha1sum NSRLFile-$(date +"%d-%m-%Y").txt > NSRLFile-$(date +"%d-%m-%Y").hash
-cat NSRLFile-$(date +"%d-%m-%Y").hash
+sha1sum NSRLFile-$pattern3.txt > NSRLFile-$pattern3.hash
+cat NSRLFile-$pattern3.hash
         fi
 else
 echo -e "${RED}ERROR!! ${YELLOW}RDS Zip file missing${NOCOLOUR}"
